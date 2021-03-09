@@ -1,7 +1,3 @@
-//If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
-
-//Find the sum of all the multiples of 3 or 5 below 1000.
-
 <!DOCTYPE>
 <html>
 <head>
@@ -26,7 +22,7 @@
 	*/
 	
 
-
+	/*
 	function calculateN(num, rangeNum){
 		var numIncre = 0, numStatic = num, range = rangeNum, finalResult = 0, sumNumberFinal = 0;
 		var statusStop = false;
@@ -35,21 +31,59 @@
 			if((numIncre + numStatic) > range){
 				statusStop = true;
 			}else{
-				numIncre += numStatic;
+				numIncre = numIncre + numStatic;
 				finalResult++;
-				sumNumberFinal += numIncre;
-				console.log(numIncre);
+				sumNumberFinal = sumNumberFinal + numIncre;
+				console.log(finalResult);
 			}
 	
 		}
 		//return sumNumberFinal;
 	}
+	*/
 
+	function findMultiNum(num = 0, range = 0){
+		var coreNum = num, rangeNum = range, result = 0, increNumber = 0;
+		var stopNow = false;
+
+		while(stopNow === false){
+			if(((increNumber + 1) * coreNum) < rangeNum){
+				increNumber++;
+				result = coreNum * increNumber;
+			}else{
+				stopNow = true;
+			}
+		}
+		
+		console.log("Number -> " + increNumber);
+		return increNumber;
+	}
+
+	function main(num = 0, range = 0){
+		return sumNumMulti(num, findMultiNum(num, range));
+	}
+
+	function sumNumMulti(num = 0, multi = 0){
+		var coreNum = num, multiNum = multi, increNum = 0, result = 0;
+		var stopNow = false;
+
+		while(stopNow === false){
+			result = result + (coreNum * increNum);
+			if(increNum === multiNum){
+				stopNow = true;	
+			}else{
+				increNum++;
+			}
+		}
+		return result;
+		//console.log("Sum Number -> " + result);
+	}
 	
-
-	console.log(calculateN(5, 20));
+	console.log(main(3, 1000));
+	//sumNumMulti(3, 6);
+	//calculateNum(5, 1000);
+//	console.log(calculateN(3, 20));
 	//console.log(parseInt(calculateN(3, 1000)) + parseInt(calculateN(5, 1000)) );
 </script>
 </html>
-
 

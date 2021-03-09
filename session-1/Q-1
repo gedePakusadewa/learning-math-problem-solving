@@ -1,3 +1,55 @@
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
 //Find the sum of all the multiples of 3 or 5 below 1000.
+
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<p id="result"></p>
+</body>
+<script>
+	var num3 = 3, num5 = 5, final3 = 1, final5 = 1;
+	var status3 = false, status5 = false;
+	/*
+	while(status3 === false){
+		if((num3 + 3) > 1000){
+			status3 = true;
+		}else{	
+			num3 += 3;
+			final3++;
+		}
+
+	}
+	*/
+	
+
+
+	function calculateN(num, rangeNum){
+		var numIncre = 0, numStatic = num, range = rangeNum, finalResult = 0, sumNumberFinal = 0;
+		var statusStop = false;
+
+		while(statusStop === false){
+			if((numIncre + numStatic) > range){
+				statusStop = true;
+			}else{
+				numIncre += numStatic;
+				finalResult++;
+				sumNumberFinal += numIncre;
+				console.log(numIncre);
+			}
+	
+		}
+		//return sumNumberFinal;
+	}
+
+	
+
+	console.log(calculateN(5, 20));
+	//console.log(parseInt(calculateN(3, 1000)) + parseInt(calculateN(5, 1000)) );
+</script>
+</html>
+
+

@@ -80,34 +80,41 @@
 	}
 	
 	function sumSameNumber(num1 = 0, num2 = 0, range = 0){
-		var numTotal = 0, coreNum1 = num1, coreNum2 = num2, limit = range, increNum= 0;
+		var numTotal = 0, coreNum1 = num1, coreNum2 = num2, limit = range, increNum= 1;
 		var multiCoreNum1 = findMultiNum(coreNum1, limit), multiCoreNum2 = findMultiNum(coreNum2, limit), result1 = 0, result2 = 0;
 
-		if(multiCoreNum1 < multiCoreNum2 ){
+		if(multiCoreNum1 > multiCoreNum2 ){
 			limit = multiCoreNum2;
 		}else{
 			limit = multiCoreNum1;
 		}
 
 		while(increNum !== (limit + 1)){
-			
+			/*
 			result1 = coreNum1 * increNum;
-			resutl2 = coreNum2 * increNum;
-			console.log(result1 + " + " + coreNum);
+			result2 = coreNum2 * increNum;
+			console.log(result1 + " + " + result2);
 			if((result1 === result2 && (result1 !== 0 && result2 !== 0))){
 				numTotal += increNum;
 			}
 
 			increNum++;
 			console.log("Increnum -> " + increNum);
-			
+			*/
+			result1 = (coreNum2 * increNum) % coreNum1;
+			console.log(coreNum2 * increNum);
+			if(result1 === 0){
+				numTotal = numTotal + result1;
+			}
+
+			increNum++;
 		}
 
-		//console.log(numTotal);
+		console.log(numTotal);
 	}
 //	lanjut alih kesalahan while function di duur
 	sumSameNumber(3, 5, 20);
-	
+	//console.log(6%3);
 	//console.log(main(3, 1000));
 	//sumNumMulti(3, 6);
 	//calculateNum(5, 1000);

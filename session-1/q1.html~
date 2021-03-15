@@ -83,7 +83,7 @@
 		var numTotal = 0, coreNum1 = num1, coreNum2 = num2, limit = range, increNum= 1;
 		var multiCoreNum1 = findMultiNum(coreNum1, limit), multiCoreNum2 = findMultiNum(coreNum2, limit), result1 = 0, result2 = 0;
 
-		if(multiCoreNum1 < multiCoreNum2 ){
+		if(multiCoreNum1 > multiCoreNum2 ){
 			limit = multiCoreNum2;
 		}else{
 			limit = multiCoreNum1;
@@ -102,9 +102,9 @@
 			console.log("Increnum -> " + increNum);
 			*/
 			result1 = (coreNum2 * increNum) % coreNum1;
-			console.log(coreNum2 * increNum);
+			//console.log(coreNum2 * increNum);
 			if(result1 === 0){
-				numTotal = numTotal + result1;
+				numTotal = numTotal + (coreNum2 * increNum);
 			}
 
 			increNum++;
@@ -112,7 +112,7 @@
 
 		console.log(numTotal);
 	}
-//	lanjut alih kesalahan while function di duur
+//	lanjut verifikasi langkah diiur pada kondisi range kelimapatan lima ne lebih banyak cara 100
 	sumSameNumber(3, 5, 20);
 	//console.log(6%3);
 	//console.log(main(3, 1000));

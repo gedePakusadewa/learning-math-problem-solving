@@ -89,22 +89,23 @@
 			limit = multiCoreNum1;
 		}
 
-		while(increNum !== limit){
+		while(increNum !== (limit + 1)){
 			
 			result1 = coreNum1 * increNum;
 			resutl2 = coreNum2 * increNum;
-			
-			if((result1 === result2 && (result1 !== 0)){
+			console.log(result1 + " + " + result2);
+			if((result1 === result2 && (result1 !== 0 && result2 !== 0))){
 				numTotal += increNum;
 			}
 
 			increNum++;
+			console.log("Increnum -> " + increNum);
 			
 		}
 
-		console.log(numTotal);
+		//console.log(numTotal);
 	}
-		
+//	lanjut alih kesalahan while function di duur
 	sumSameNumber(3, 5, 20);
 	
 	//console.log(main(3, 1000));

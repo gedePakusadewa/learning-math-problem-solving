@@ -59,8 +59,12 @@
 		return increNumber;
 	}
 
-	function main(num = 0, range = 0){
-		return sumNumMulti(num, findMultiNum(num, range));
+	function main(num1 = 0, num2 = 0, range = 0){
+		var result1 = sumNumMulti(num1, findMultiNum(num1, range));
+		var result2 = sumNumMulti(num2, findMultiNum(num2, range));
+		var result3 = sumSameNumber(num1, num2, range);
+
+		return result1 + result2 - result3;
 	}
 
 	function sumNumMulti(num = 0, multi = 0){
@@ -90,7 +94,7 @@
 		}
 
 		while(increNum !== (limit + 1)){
-			/*
+			/*	
 			result1 = coreNum1 * increNum;
 			result2 = coreNum2 * increNum;
 			console.log(result1 + " + " + result2);
@@ -102,20 +106,21 @@
 			console.log("Increnum -> " + increNum);
 			*/
 			result1 = (coreNum2 * increNum) % coreNum1;
-			//console.log(coreNum2 * increNum);
+			
 			if(result1 === 0){
+				
 				numTotal = numTotal + (coreNum2 * increNum);
 			}
-
+		
 			increNum++;
 		}
 
 		console.log(numTotal);
 	}
-//	lanjut verifikasi langkah diiur pada kondisi range kelimapatan lima ne lebih banyak cara 100
-	sumSameNumber(3, 5, 20);
+
+	//sumSameNumber(3, 5, 1000);
 	//console.log(6%3);
-	//console.log(main(3, 1000));
+	console.log(main(3, 5, 1000));
 	//sumNumMulti(3, 6);
 	//calculateNum(5, 1000);
 //	console.log(calculateN(3, 20));

@@ -7,41 +7,6 @@
 	<p id="result"></p>
 </body>
 <script>
-	var num3 = 3, num5 = 5, final3 = 1, final5 = 1;
-	var status3 = false, status5 = false;
-	/*
-	while(status3 === false){
-		if((num3 + 3) > 1000){
-			status3 = true;
-		}else{	
-			num3 += 3;
-			final3++;
-		}
-
-	}
-	*/
-	
-
-	/*
-	function calculateN(num, rangeNum){
-		var numIncre = 0, numStatic = num, range = rangeNum, finalResult = 0, sumNumberFinal = 0;
-		var statusStop = false;
-
-		while(statusStop === false){
-			if((numIncre + numStatic) > range){
-				statusStop = true;
-			}else{
-				numIncre = numIncre + numStatic;
-				finalResult++;
-				sumNumberFinal = sumNumberFinal + numIncre;
-				console.log(finalResult);
-			}
-	
-		}
-		//return sumNumberFinal;
-	}
-	*/
-
 	function findMultiNum(num = 0, range = 0){
 		var coreNum = num, rangeNum = range, result = 0, increNumber = 0;
 		var stopNow = false;
@@ -55,7 +20,7 @@
 			}
 		}
 		
-		//console.log("Number -> " + increNumber);
+
 		return increNumber;
 	}
 
@@ -94,18 +59,7 @@
 		}
 
 		while(increNum !== (limit + 1)){
-			/*	
-			result1 = coreNum1 * increNum;
-			result2 = coreNum2 * increNum;
-			console.log(result1 + " + " + result2);
-			if((result1 === result2 && (result1 !== 0 && result2 !== 0))){
-				numTotal += increNum;
-			}
-
-			increNum++;
-			console.log("Increnum -> " + increNum);
-			*/
-			result1 = (coreNum2 * increNum) % coreNum1;
+		result1 = (coreNum2 * increNum) % coreNum1;
 			
 			if(result1 === 0){
 				
@@ -118,13 +72,8 @@
 	
 	}
 
-	//sumSameNumber(3, 5, 1000);
-	//console.log(6%3);
 	console.log(main(3, 5, 1000));
-	//sumNumMulti(3, 6);
-	//calculateNum(5, 1000);
-//	console.log(calculateN(3, 20));
-	//console.log(parseInt(calculateN(3, 1000)) + parseInt(calculateN(5, 1000)) );
+
 </script>
 </html>
 

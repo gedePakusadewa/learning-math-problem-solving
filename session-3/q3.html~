@@ -9,7 +9,7 @@
 	<script>
 		function calculatePrimeNumber(range = 0){
 			var limit = range, increNum = 2;
-			var basicNumber = [2, 3, 4, 5, 6, 7, 8, 9];
+			var basicNumber = { 2, 3, 4, 5, 6, 7, 8, 9};
 			
 			foreach(basicNumber as num){
 				console.log(num);

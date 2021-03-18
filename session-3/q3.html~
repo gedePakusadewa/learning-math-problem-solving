@@ -31,10 +31,11 @@
 		}
 			
 		//loopPrimeNumberRange(100);
-		
+		/*
 		function tes(digit = 0){
 			var result = [];
 			var num = digit;
+			
 
 			if(isPrimeNumber(num)){
 				return result;
@@ -42,8 +43,9 @@
 				
 			}
 		}
-		
-		console.log("Is Prime Number -> " + isPrimeNumber(1049));
+		*/
+		var tes12 = 289;
+		console.log("Is " + tes12 + " Prime Number -> " + isPrimeNumber(tes12));
 		//console.log(21 % 2);
 		
 	</script>

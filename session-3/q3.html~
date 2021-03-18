@@ -7,58 +7,43 @@
 
 	</body>
 	<script>
-		function calculatePrimeNumber(num = 0){
-			var increNum = 0;
+		function isPrimeNumber(num = 0){
+			var increNum = 0, result = 0, num1 = num;
 			var basicNumber = [2, 3, 4, 5, 6, 7, 8, 9];
-			/*
-			for(var i = 0; i < basicNumber.length; i++){
-				console.log(basicNumber[i]);
-			}
-			*/
-
-			var result = 0;
 			var isPrimeNum = true;
-			var num1 = num;
 
 			while(increNum < basicNumber.length){
 				result = num1 % basicNumber[increNum];
-				//console.log(basicNumber[increNum]);
 				if(result === 0){
 					isPrimeNum = false;
-					//console.log("---> " + basicNumber[increNum]);
-				//	break;
+					break;
 				}
 				increNum++;
 			}
-
-			if(isPrimeNum === true){
-				console.log(num1 + "---> " + isPrimeNum);
-			}
+			return isPrimeNum;
 		}
 
 		function loopPrimeNumberRange(range = 0){
 			var i = 0, limit = range;
 			for(i = 2; i <= limit; i++){
-				calculatePrimeNumber(i);
+				isPrimeNumber(i);
 			}
 		}
 			
 		//loopPrimeNumberRange(100);
 		
-		
-		function isPrimeNumber(digit){
-			var basicNumber = [2, 3, 4, 5, 6, 7, 8, 9];
-			var i = 0, increNum = 0, result = 0, num1 = digit;
-			var isPrimeNum = false;
+		function tes(digit = 0){
+			var result = [];
+			var num = digit;
 
-			for(){
+			if(isPrimeNumber(num)){
+				return result;
+			}else{
 				
 			}
-		}		
+		}
 		
-
-		
-		//calculatePrimeNumber(40);
+		console.log("Is Prime Number -> " + isPrimeNumber(1049));
 		//console.log(21 % 2);
 		
 	</script>

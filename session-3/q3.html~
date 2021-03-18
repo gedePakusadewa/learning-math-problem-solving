@@ -17,7 +17,7 @@
 			*/
 
 			var result = 0;
-			var isPriceNum = true;
+			var isPrimeNum = true;
 			var num1 = num;
 
 			while(increNum < basicNumber.length){
@@ -30,14 +30,37 @@
 				}
 				increNum++;
 			}
-		
-			console.log(num1 + "---> " + isPrimeNum);
 
+			if(isPrimeNum === true){
+				console.log(num1 + "---> " + isPrimeNum);
+			}
 		}
 
-		calculatePrimeNumber(41);
-		//console.log(21 % 7);
-		 
+		function loopPrimeNumberRange(range = 0){
+			var i = 0, limit = range;
+			for(i = 2; i <= limit; i++){
+				calculatePrimeNumber(i);
+			}
+		}
+			
+		//loopPrimeNumberRange(100);
+		
+		
+		function isPrimeNumber(digit){
+			var basicNumber = [2, 3, 4, 5, 6, 7, 8, 9];
+			var i = 0, increNum = 0, result = 0, num1 = digit;
+			var isPrimeNum = false;
+
+			for(){
+				
+			}
+		}		
+		
+
+		
+		//calculatePrimeNumber(40);
+		//console.log(21 % 2);
+		
 	</script>
 
 </html>

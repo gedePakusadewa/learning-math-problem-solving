@@ -22,7 +22,18 @@
 			}
 			return isPrimeNum;
 		}
+		
+		function isPrimeNumber_v2(num = 0){
+			//var isPrime = false;
+			for(var i = 2; i < num; i ++ ){
+				if((num % i) === 0){
+					return false; 
+				}
+			}
 
+			return true;
+		}
+		
 		function loopPrimeNumberRange(range = 0){
 			var i = 0, limit = range;
 			for(i = 2; i <= limit; i++){
@@ -31,21 +42,9 @@
 		}
 			
 		//loopPrimeNumberRange(100);
-		/*
-		function tes(digit = 0){
-			var result = [];
-			var num = digit;
-			
-
-			if(isPrimeNumber(num)){
-				return result;
-			}else{
-				
-			}
-		}
-		*/
-		var tes12 = 289;
-		console.log("Is " + tes12 + " Prime Number -> " + isPrimeNumber(tes12));
+		
+		var tes12 = 7213;
+		console.log("Is " + tes12 + " Prime Number -> " + isPrimeNumber_v2(tes12));
 		//console.log(21 % 2);
 		
 	</script>

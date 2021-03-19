@@ -8,23 +8,6 @@
 	</body>
 	<script>
 		function isPrimeNumber(num = 0){
-			var increNum = 0, result = 0, num1 = num;
-			var basicNumber = [2, 3, 4, 5, 6, 7, 8, 9];
-			var isPrimeNum = true;
-
-			while(increNum < basicNumber.length){
-				result = num1 % basicNumber[increNum];
-				if(result === 0){
-					isPrimeNum = false;
-					break;
-				}
-				increNum++;
-			}
-			return isPrimeNum;
-		}
-		
-		function isPrimeNumber_v2(num = 0){
-			//var isPrime = false;
 			for(var i = 2; i < num; i ++ ){
 				if((num % i) === 0){
 					return false; 
@@ -43,8 +26,23 @@
 			
 		//loopPrimeNumberRange(100);
 		
-		var tes12 = 7213;
-		console.log("Is " + tes12 + " Prime Number -> " + isPrimeNumber_v2(tes12));
+		function tes(digit){
+			var i = 2, num = digit, increNum = 0;
+			var listNum = [];
+			for(i < digit; i++){
+				if((num % i) === 0){
+					listNum[increNum] = i;
+					num = (num / i);
+					i = 2;
+					increNum++;
+				}
+			}
+			return listNum;
+		}		
+
+		console.log(tes(144));
+		//var tes12 = 7213;
+		//console.log("Is " + tes12 + " Prime Number -> " + isPrimeNumber(tes12));
 		//console.log(21 % 2);
 		
 	</script>

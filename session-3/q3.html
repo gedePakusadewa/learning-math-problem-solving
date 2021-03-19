@@ -26,8 +26,23 @@
 			
 		//loopPrimeNumberRange(100);
 		
-		var tes12 = 7213;
-		console.log("Is " + tes12 + " Prime Number -> " + isPrimeNumber(tes12));
+		function tes(digit){
+			var i = 2, num = digit, increNum = 0;
+			var listNum = [];
+			for(i = 2; i < digit; i++){
+				if((num % i) === 0){
+					listNum[increNum] = i;
+					num = (num / i);
+					i = 2;
+					increNum++;
+				}
+			}
+			return listNum;
+		}		
+
+		console.log(tes(144));
+		//var tes12 = 7213;
+		//console.log("Is " + tes12 + " Prime Number -> " + isPrimeNumber(tes12));
 		//console.log(21 % 2);
 		
 	</script>

@@ -7,6 +7,7 @@
 
 	</body>
 	<script>
+		//function below to check is a number a prime number of not?
 		function isPrimeNumber(num = 0){
 			for(var i = 2; i < num; i ++ ){
 				if((num % i) === 0){
@@ -17,34 +18,42 @@
 			return true;
 		}
 		
-		function loopPrimeNumberRange(range = 0){
-			var i = 0, limit = range;
-			for(i = 2; i <= limit; i++){
-				isPrimeNumber(i);
-			}
-		}
-			
-		//loopPrimeNumberRange(100);
-		
-		function tes(digit){
+		//this function to find list of prime number from specific digit
+		function get_PrimeFactorList(digit){
 			var i = 2, num = digit, increNum = 0;
 			var listNum = [];
 			for(i = 2; i < digit; i++){
 				if((num % i) === 0){
 					listNum[increNum] = i;
+					console.log("num-> " + num + " i-> " + i);
 					num = (num / i);
-					i = 2;
+					i = 1;
 					increNum++;
+					
+				}
+
+				if(num === i){
+					break;
 				}
 			}
 			return listNum;
 		}		
-
-		console.log(tes(144));
-		//var tes12 = 7213;
-		//console.log("Is " + tes12 + " Prime Number -> " + isPrimeNumber(tes12));
-		//console.log(21 % 2);
 		
+		//get largest number from array data
+		function getLargestPrimeFactor(arrayData){
+			var tmp = 0, i = 0;
+
+ 			for(i = 0; i < arrayData.length; i++){
+				if(tmp < arrayData[i]){
+					tmp = arrayData[i];
+				}	
+			}
+
+			return tmp;
+		}
+
+		console.log(getLargestPrimeFactor(get_PrimeFactorList(600851475143)));
+	
 	</script>
 
 </html>

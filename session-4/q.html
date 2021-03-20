@@ -7,16 +7,22 @@
 
 	</body>
 	<script>
-		var tes = 90909;
+		var tes = 101;
 
 		function isPolindromic(num = 0){
 			var tmp  = String(num).split("");
 			var data = "";
 			var i = 0;
 			
-			for(i = tmp.length; i > 0; i--){
+			for(i = tmp.length - 1; i >= 0; i--){
 				data = data + tmp[i];
-				console.log(data);
+				//console.log(data);
+			}
+
+			if(num === parseInt(data)){
+				return true;
+			}else{
+				return false;
 			}
 			
 
@@ -24,8 +30,23 @@
 
 		}
 
-		isPolindromic(tes);
+		function main(){
+			var digit1 = 0, digit2 = 0;
+			for(var i = 999; i > 99; i--){
+				for(var x = 999; x > 99; x--){
+					console.log(i + " x " + x + " = " + i * x);
+					if(isPolindromic(i * x)){
+						digit1 = i;
+						digit2 = x;
+						break;
+					}	
+				}	
+			}
+			console.log(digit1 + " ----- " + digit2);
+		}
 
+		main();
+lanjut engken carane ngalih perkalian ne paling efektif untuk mementuka 3 digit ne menghasilkan polindromic terbesar
 		//console.log("asdadasd");
 	</script>
 </html>

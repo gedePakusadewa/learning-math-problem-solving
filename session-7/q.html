@@ -5,16 +5,27 @@
 	</head>
 	<body></body>
 	<script>
-		function getSumSquare(){
-			var i = 0, sum = 0, limit = 10;
+		function getSumSquare(range = 0){
+			var i = 0, sum = 0, limit = range;
 
 			for(i = 1; i <= limit; i++){
-				sum = sum + Math.pow();
+				sum = sum + Math.pow(i, 2);
 			}
 
 			return sum;
 		}
 
-		console.log(getSumSquare());
+		function getSquareSum(range = 0){
+			var i = 1, limit = range, sum = 0;
+
+			while(i <= limit){
+				sum = sum + i;
+				i++;
+			}
+
+			return Math.pow(sum, 2);
+		}
+
+		console.log(getSquareSum(100) - getSumSquare(100));
 	</script>
 </html>

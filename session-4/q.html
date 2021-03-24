@@ -7,8 +7,6 @@
 
 	</body>
 	<script>
-		var tes = 101;
-
 		function isPolindromic(num = 0){
 			var tmp  = String(num).split("");
 			var data = "";
@@ -16,7 +14,6 @@
 			
 			for(i = tmp.length - 1; i >= 0; i--){
 				data = data + tmp[i];
-				//console.log(data);
 			}
 
 			if(num === parseInt(data)){
@@ -24,28 +21,28 @@
 			}else{
 				return false;
 			}
-			
-
-			//console.log(tmp);
-
 		}
 
 		function main(){
-			var digit1 = 0, digit2 = 0;
-			for(var i = 999; i > 99; i--){
-				for(var x = 999; x > 99; x--){
-					console.log(i + " x " + x + " = " + i * x);
-					if(isPolindromic(i * x)){
+			var digit1 = 0, digit2 = 0, tmp = 0;
+			var isStop = false;
+			for(var i = 999; i > 899; i--){
+				if(isStop){
+					break;
+				}
+				for(var x = 999; x > 899; x--){
+					tmp = i * x;
+					if(isPolindromic(tmp)){
 						digit1 = i;
 						digit2 = x;
+						console.log(tmp);
+						isStop = true;
 						break;
 					}	
 				}	
 			}
-			//console.log(digit1 + " ----- " + digit2);
 		}
 		
 		main();
-		//console.log("asdadasd");
 	</script>
 </html>

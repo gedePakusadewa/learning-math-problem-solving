@@ -12,7 +12,6 @@
 			var isNum = true;
 			while(i <= limit){
 				mod = num % i;
-				//console.log(num + " * " + i + " = " + mod);
 				if(mod !== 0){
 					isNum = false;		
 					break;
@@ -24,13 +23,11 @@
 
 		var tmp = 0;
 		for(var i = 20; i < 1000000000; i++){
-			//console.log(i);
 			if(isTarget(20, i)){
 				tmp = i;
 				break;
 			}
 		}
-		//isTarget();
 		console.log(tmp);
 	</script>
 </html>

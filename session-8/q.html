@@ -18,22 +18,23 @@
 				
 
 
-			return data.length;
+			return aloneValue(data);
 		}
 
-		function lowestValue(data){
+		function aloneValue(data){
 			var tmp = data;
 			var value = 0;
-			for(var i = 0; i < tmp.length; i++){
-				if((i + 1) < tmp.length){
-					if(tmp[i] < tmp[i + 1]){
-						value = tmp[i]
+			for(var i = 0; i < temp.length; i++){
+				for(var k = i + 1; k < tmp.length; k++){
+					if(tmp[i] === tmp[k]){
+
 					}
 				}
-			}
+			}			 
 		}
-		
-		console.log(test());
+
+		test();
+		//console.log(test());
 
 	</script>
 </html>

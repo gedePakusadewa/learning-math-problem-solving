@@ -18,15 +18,25 @@
 				
 
 
-			return data.length;
+			return lowestValue(data);
 		}
 
-		function findOnlyOne(data){
+		function lowestValue(data){
 			var tmp = data;
+			var value = 0;
+			for(var i = 0; i < tmp.length; i++){
+				if((i + 1) < tmp.length){
+					if(tmp[i] < tmp[i + 1]){
+						value = tmp[i];
+					}
+					console.log(tmp[i]);
+				}
+			}
 
+			return value;
 		}
-		
-		console.log(test());
+		test();
+		//console.log(test());
 
 	</script>
 </html>

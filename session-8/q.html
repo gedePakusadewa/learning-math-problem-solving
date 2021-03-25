@@ -6,6 +6,34 @@
 	<body></body>
 	<script>
 		//question from kecek in fodler GDP question 2
-		:
+		function calculate(cost = 0, price = 0, sum = 0, listSteel){
+			var c = cost, p = price, n = sum;
+			var list = listSteel;
+
+			
+		}	
+
+		function test(){
+			var data = [0.1, 0.1, 0.5, 0.5, 0.6, 0.1, 0.1, 0.5, 0.7, 0.6];
+				
+
+
+			return data.length;
+		}
+
+		function lowestValue(data){
+			var tmp = data;
+			var value = 0;
+			for(var i = 0; i < tmp.length; i++){
+				if((i + 1) < tmp.length){
+					if(tmp[i] < tmp[i + 1]){
+						value = tmp[i]
+					}
+				}
+			}
+		}
+		
+		console.log(test());
+
 	</script>
 </html>

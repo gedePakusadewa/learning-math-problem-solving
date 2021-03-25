@@ -24,17 +24,34 @@
 		function aloneValue(data){
 			var tmp = data;
 			var value = 0;
-			for(var i = 0; i < temp.length; i++){
-				for(var k = i + 1; k < tmp.length; k++){
+			var stop = true;
+			for(var i = 0; i < tmp.length; i++){
+				value = tmp[i];
+				stop = true;
+				//console.log(value);
+				for(var k = 0; k < tmp.length; k++){
+				
+					if(i === k){
+						continue;
+					}
+					//console.log(tmp[i] + " === " + tmp[k]);
 					if(tmp[i] === tmp[k]){
-
+						//console.log(tmp[i] + " === " + tmp[k]);
+						//value = 0;
+						stop = false;
+						break;
 					}
 				}
-			}			 
+
+				if(stop === true){
+					break;
+				}
+			}		
+			return value;
 		}
 
-		test();
-		//console.log(test());
+		//test();
+		console.log(test());
 
 	</script>
 </html>

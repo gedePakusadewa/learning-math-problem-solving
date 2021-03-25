@@ -18,25 +18,35 @@
 				
 
 
-			return lowestValue(data);
+			return aloneValue(data);
 		}
 
-		function lowestValue(data){
+		function aloneValue(data){
 			var tmp = data;
 			var value = 0;
 			for(var i = 0; i < tmp.length; i++){
-				if((i + 1) < tmp.length){
-					if(tmp[i] < tmp[i + 1]){
+				//value = tmp[i];
+				//console.log(value);
+				for(var k = 0; k < tmp.length; k++){
+				
+					if(i === k){
+						continue;
+					}
+					//console.log(tmp[i] + " === " + tmp[k]);
+					if(tmp[i] === tmp[k]){
+						console.log(tmp[i] + " === " + tmp[k]);
+						value = 0;
+						break;
+					}else{
 						value = tmp[i];
 					}
-					console.log(tmp[i]);
 				}
-			}
-
+			}		
 			return value;
 		}
-		test();
-		//console.log(test());
+
+		//test();
+		console.log(test());
 
 	</script>
 </html>

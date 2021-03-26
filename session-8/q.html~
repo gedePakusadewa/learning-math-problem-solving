@@ -14,7 +14,7 @@
 		}	
 
 		function test(){
-			var data = [0.1, 0.1, 0.5, 0.5, 0.6, 0.1, 0.1, 0.5, 0.7, 0.6];
+			var data = [0.1, 0.1, 0.5, 0.5, 0.2, 0.1, 0.1, 0.5, 0.7, 0.6];
 				
 
 
@@ -24,8 +24,10 @@
 		function aloneValue(data){
 			var tmp = data;
 			var value = 0;
+			var stop = true;
 			for(var i = 0; i < tmp.length; i++){
-				//value = tmp[i];
+				value = tmp[i];
+				stop = true;
 				//console.log(value);
 				for(var k = 0; k < tmp.length; k++){
 				
@@ -34,12 +36,15 @@
 					}
 					//console.log(tmp[i] + " === " + tmp[k]);
 					if(tmp[i] === tmp[k]){
-						console.log(tmp[i] + " === " + tmp[k]);
-						value = 0;
+						//console.log(tmp[i] + " === " + tmp[k]);
+						//value = 0;
+						stop = false;
 						break;
-					}else{
-						value = tmp[i];
 					}
+				}
+
+				if(stop === true){
+					break;
 				}
 			}		
 			return value;

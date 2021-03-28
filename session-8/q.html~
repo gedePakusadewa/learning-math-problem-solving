@@ -5,25 +5,33 @@
 	</head>
 	<body></body>
 	<script>
-		//question from kecek in fodler GDP question 2
-		function calculate(cost = 0, price = 0, sum = 0, listSteel){
-			var c = cost, p = price, n = sum;
-			var list = listSteel;
-
-			
-		}	
+		//question from kecek in folder GDP question 2
 
 		function test(){
-			var data = [23, 90, 70, 150, 3];
-			var price = 100, cut = 10, totalCut = 0;
+			var data = [23, 90, 70, 150, 9];
+			var price = 100, cut = 10, totalCut = 0, totalLeftOver = 0;
 			var low = lowest(data);
-
-			for(var i = 0; i < data.length; i++){
-				totalCut = totalCut + sumMod(data[i], low);
+			if(data.length <= 1000 && data.length >= 1){
+				if(low >= 1 && low <= 10000 ){
+					if((price >= 1 && price <= 100000000) && (cut >= 1 && cut <= 100000000)){	
+						for(var i = 0; i < data.length; i++){	
+							totalCut = totalCut + sumMod(data[i], low);
+							totalLeftOver = totalLeftOver + (data[i] - (sumMod(data[i], low) * low));
+						}
+						
+						var total = (totalCut * price) - (totalCut * cut - 1);	
+					}
+				}
 			}
+			console.log(totalLeftOver);
+		}
 
-			var total = (totalCut * price) - (totalCut * cut);	
-			console.log(total);
+		function leftOver(digit = 0, lowest = 0){
+			var tmp = digit, incre = 0;
+			while(tmp >= lowest){
+				tmp = tmp - lowest;
+			}
+			return incre;
 		}
 
 		function lowest(data){

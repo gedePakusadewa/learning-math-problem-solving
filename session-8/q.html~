@@ -14,16 +14,16 @@
 		}	
 
 		function test(){
-			var data = [45, 817, 12, 40, 87, 6, 19, 34];
-			var price = 100, cut = 20, totalCut = 0;
-			var lowest = lowest(data);
+			var data = [23, 90, 70, 150, 3];
+			var price = 100, cut = 10, totalCut = 0;
+			var low = lowest(data);
 
 			for(var i = 0; i < data.length; i++){
-				totalCut = totalCut + sumMod(data[i]);
+				totalCut = totalCut + sumMod(data[i], low);
 			}
 
 			var total = (totalCut * price) - (totalCut * cut);	
-			return total;
+			console.log(total);
 		}
 
 		function lowest(data){
@@ -57,7 +57,7 @@
 			return incre;
 		}
 
-		//test();
+		test();
 		(sumMod(27, 3));
 
 	</script>

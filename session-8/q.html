@@ -8,8 +8,8 @@
 		//question from kecek in folder GDP question 2
 
 		function test(){
-			var data = [23, 90, 70, 150, 3];
-			var price = 100, cut = 10, totalCut = 0, totalLeftOver = 0;
+			var data = [17, 49, 50, 10, 33, 21];
+			var price = 100, cut = 10, totalCut = 0, totalLeftOver = 0, total = 0, fixTotal = 0;
 			var low = lowest(data);
 			if(data.length <= 1000 && data.length >= 1){
 				if(low >= 1 && low <= 10000 ){
@@ -17,13 +17,15 @@
 						for(var i = 0; i < data.length; i++){	
 							totalCut = totalCut + sumMod(data[i], low);
 							totalLeftOver = totalLeftOver + (data[i] - (sumMod(data[i], low) * low));
+							leftOver(data[i], low);
 						}
 						
-						var total = (totalCut * price) - (totalCut * cut - 1);	
+						total = (totalCut * price) - (totalCut * cut - 1);	
+						fixTotal = total + (totalLeftOver * price) - (totalLeftOver * cut);
 					}
 				}
 			}
-			console.log(totalLeftOver);
+			//console.log(totalCut);
 		}
 
 		function leftOver(digit = 0, lowest = 0){
@@ -31,12 +33,20 @@
 			while(tmp >= lowest){
 				tmp = tmp - lowest;
 			}
+			console.log(tmp);
 			return incre;
 		}
 
 		function lowest(data){
 			var tmp = data;
-			var i = 0, value = tmp[0];
+			var k = 0, i = 0, value = tmp[0];
+			
+			for(k = 0; k < tmp.length, k++){
+				if(tmp[k] > 0){
+					value = tmp[k];
+					break;
+				}
+			}
 			
 			while(i < tmp.length){
 				if((i + 1) < tmp.length){
@@ -66,7 +76,7 @@
 		}
 
 		test();
-		(sumMod(27, 3));
+	//	(sumMod(27, 3));
 
 	</script>
 </html>

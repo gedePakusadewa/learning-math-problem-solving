@@ -8,24 +8,34 @@
 		//question from kecek in folder GDP question 2
 
 		function test(){
-			var data = [17, 49, 50, 10, 33, 21];
-			var price = 100, cut = 10, totalCut = 0, totalLeftOver = 0, total = 0, fixTotal = 0;
-			var low = lowest(data);
+			//the thickness that i used in this solution is 1, because it generate the largest 
+			//earn compare to any digit positive above 1;
+
+			//var data = [7,9,0,0,3,1];
+			var data = [17, 49, 50, 10, 33, 21, 1, 1];
+			var price = 100, cut = 50, totalCut = 0, totalLeftOver = 0, total = 0, fixTotal = 0;
+			var low = 1, anotherLow = 0;
+			
 			if(data.length <= 1000 && data.length >= 1){
 				if(low >= 1 && low <= 10000 ){
 					if((price >= 1 && price <= 100000000) && (cut >= 1 && cut <= 100000000)){	
-						for(var i = 0; i < data.length; i++){	
-							totalCut = totalCut + sumMod(data[i], low);
-							totalLeftOver = totalLeftOver + (data[i] - (sumMod(data[i], low) * low));
-							leftOver(data[i], low);
+						for(var i = 0; i < data.length; i++){
+							if(data[i] !== low){
+								totalCut = totalCut + sumMod(data[i], low);
+								//totalLeftOver = totalLeftOver + (data[i] - (sumMod(data[i], low) * low));
+								//leftOver(data[i], low);
+							}else{
+								anotherLow++;
+							}
 						}
 						
-						total = (totalCut * price) - (totalCut * cut - 1);	
-						fixTotal = total + (totalLeftOver * price) - (totalLeftOver * cut);
+						total = ((totalCut + anotherLow) * price) - (totalCut * cut);	
+						//fixTotal = total + (totalLeftOver * price) - (totalLeftOver * cut);
 					}
 				}
 			}
-			//console.log(totalCut);
+			
+			console.log(total);
 		}
 
 		function leftOver(digit = 0, lowest = 0){
@@ -33,7 +43,7 @@
 			while(tmp >= lowest){
 				tmp = tmp - lowest;
 			}
-			console.log(tmp);
+			//console.log(tmp);
 			return incre;
 		}
 
@@ -41,21 +51,22 @@
 			var tmp = data;
 			var k = 0, i = 0, value = tmp[0];
 			
-			for(k = 0; k < tmp.length, k++){
+			for(k = 0; k < tmp.length; k++){
 				if(tmp[k] > 0){
 					value = tmp[k];
+					break;
 				}
 			}
-			
+
 			while(i < tmp.length){
 				if((i + 1) < tmp.length){
 					//console.log(tmp[i] + " < " + tmp[i + 1] + " -> value = " + value);
 					if(tmp[i] <= tmp[i + 1]){
-						if(tmp[i] < value){	
+						if(tmp[i] < value && tmp[i] !== 0){	
 							value = tmp[i];
 						}	
 					}else{
-						if(tmp[i + 1] < value){
+						if(tmp[i + 1] < value && tmp[i + 1] !== 0){
 							value = tmp[i + 1];
 						}
 					}
@@ -71,11 +82,12 @@
 				tmp = tmp - lowest;
 				incre++;
 			}
+			
 			return incre;
 		}
 
 		test();
-	//	(sumMod(27, 3));
+		//console.log(sumMod(10, 10));
 
 	</script>
 </html>

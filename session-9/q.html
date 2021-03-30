@@ -1,1 +1,38 @@
-sdasasdasdasd
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8" />
+	</head>
+	<body>
+
+	</body>
+	<script>
+		function tes(){
+			var limit = 100, digit = 2;
+			/*
+			while(){
+				condition1 = digit % digit;
+			}
+			*/
+		}	
+
+		function isPrime(digit = 0){
+			var list = [2, 3, 4, 5, 6, 7, 8, 9];
+			var condition = true;
+			for(var i = 0; i < list.length; i++){
+				if(digit === 2 || digit === 3 || digit === 7){
+					condition = true;
+					break;
+				}
+
+				if(digit % list[i] === 0){
+					condition = false; 
+					break;
+				}
+			}
+			return condition;
+		}
+
+		console.log(isPrime(9));
+	</script>
+</html>

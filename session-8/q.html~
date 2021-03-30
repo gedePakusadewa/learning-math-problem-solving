@@ -22,15 +22,12 @@
 						for(var i = 0; i < data.length; i++){
 							if(data[i] !== low){
 								totalCut = totalCut + sumMod(data[i], low);
-								//totalLeftOver = totalLeftOver + (data[i] - (sumMod(data[i], low) * low));
-								//leftOver(data[i], low);
 							}else{
 								anotherLow++;
 							}
 						}
 						
 						total = ((totalCut + anotherLow) * price) - (totalCut * cut);	
-						//fixTotal = total + (totalLeftOver * price) - (totalLeftOver * cut);
 					}
 				}
 			}
@@ -43,7 +40,6 @@
 			while(tmp >= lowest){
 				tmp = tmp - lowest;
 			}
-			//console.log(tmp);
 			return incre;
 		}
 
@@ -59,8 +55,7 @@
 			}
 
 			while(i < tmp.length){
-				if((i + 1) < tmp.length){
-					//console.log(tmp[i] + " < " + tmp[i + 1] + " -> value = " + value);
+				if((i + 1) < tmp.length){	
 					if(tmp[i] <= tmp[i + 1]){
 						if(tmp[i] < value && tmp[i] !== 0){	
 							value = tmp[i];

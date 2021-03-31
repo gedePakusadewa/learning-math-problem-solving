@@ -7,45 +7,30 @@
 
 	</body>
 	<script>
-		function tes(){
-			var limit = 1, digit = 2, incre = 0, tmp = 0;
+		//find the 10.001th prime number! project eular number 7
+		function findPrimeNumber(max = 0){
+			var limit = 1, digit = 2, incre = 0, stopNow = max;
 			var dataSet = [];
-			while(limit <= 30){
+			while(limit <= stopNow){
 				if(isPrime(digit)){
-					tmp = digit;
+					dataSet[limit] = digit;
 					limit++;
-					console.log(tmp);
 				}
 				digit++;	
 			}
-			//return tmp;
+			return dataSet[max];
 		}	
 
 		function isPrime(digit = 0){
-			var list = [2, 3, 4, 5, 6, 7, 8, 9];
-			var condition = true;
-			
-			if(digit % 2 === 1){
-			//checked if digit is even or odd number, if it even that it not prime number
-			next search how to chekck prime number	
-				for(var i = 0; i < list.length; i++){
-					if(digit === 2 || digit === 3 || digit === 7){
-						condition = true;
-						break;
-					}
-
-					if(digit % list[i] === 0){
-						condition = false; 
-						break;
-					}
-				}	
-
-			}else{
-				condition = false;
+			for(var i = 2; i < digit; i++){
+				if(digit % i === 0){
+					return false;
+				}
 			}
-			return condition;
+
+			return digit > 1;
 		}
 
-		console.log(tes());
+		console.log(findPrimeNumber(10001));
 	</script>
 </html>

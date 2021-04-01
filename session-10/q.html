@@ -7,6 +7,35 @@
 
 	</body>
 	<script>
+		var list = [8,9,8,7,3,8,9];
 
+		function tes(){
+			var limit = 2, data = 1, stopNow = limit - 1;
+			var tmp = [];
+			for(var i = 0; i < (list.length - stopNow); i++){
+				for(var k = 0; k < limit; k++){
+					data = data * list[i + k];
+				}
+				tmp[i] = data;
+				data = 1;
+			}
+			console.log(tes2(tmp));
+		}
+
+		function tes2(data){
+			var tmp = data[0];
+			var position = 0;
+			for(var i = 0; i < data.length; i++){
+				if(tmp < data[i]){
+					position = i;
+				}	
+			}
+
+			return position;
+		}
+
+		tes();
+		
+		
 	</script>
 </html>

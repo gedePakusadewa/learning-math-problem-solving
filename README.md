@@ -1,4 +1,4 @@
-#A Simple Website To Solve Math Problem
+# A Simple Website To Solve Math Problem
 
 I make a simple website that contain basic element of html like head, body, and script tag.
 

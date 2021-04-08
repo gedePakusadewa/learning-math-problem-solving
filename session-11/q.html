@@ -6,6 +6,44 @@
 	<body>
 	</body>
 	<script>
+		//project eular number 9
+		//pyhtagorean triplet problem, a^2 + b^2 = c^2
+		//then what is abc where a + b + c = 1000
 
+		function main(){
+			var stopNow = false;
+			var digit1 = 0, digit2 = 0, digit3 = 0, limit = 1000;
+			for(var i = 1; i < limit; i++){
+				if(stopNow === true){
+					break;
+				}
+				for(var k = 2; k < limit; k++){
+					for(var w = 3; w < limit; w++){
+						if(i < k && k < w){
+							if((i + k + w) === limit){
+								if(isPythagoreanTriplet(i, k, w)){
+							stopNow = true;
+							digit1 = i;
+							digit2 = k;
+							digit3 = w;
+							break;
+								}
+							}
+						}	
+					}
+				}
+			}
+			console.log(digit1 + " --- " + digit2 + " --- " + digit3);
+		}
+
+		function isPythagoreanTriplet(digit1 = 0, digit2 = 0, digit3 = 0){
+			var tmp1 = digit1 * digit1, tmp2 = digit2 * digit2, tmp3 = digit3 * digit3;
+			if(tmp1 + tmp2 === tmp3){
+				return true;
+			}
+			return false;
+		}
+		//console.log(tes2(65, 72, 97));
+		main();
 	</script>
 </html>

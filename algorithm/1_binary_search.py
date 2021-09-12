@@ -1,31 +1,33 @@
 #implementing simple binary search problem using simple array data 
 
 def bs(dataArray, keywords):
-    low = -999
-    high = -999
-    mid = -999
+    if (keywords > dataArray[len(dataArray)-1]) or (keywords < dataArray[0]):
+        return -99999999999
+
     length = len(dataArray)
+    mid = 0
+    low = mid + 1
+    high = length
     stop = False
     while stop == False:
-        low = length - (length - 1)
-        high = length
-        mid = int((low + (high - low)/2)) - 1
-        print(mid)
+        mid = int((low + (high - low)/2))
+   #     print(mid)
         
-        if dataArray[mid] < keywords:
+        if dataArray[mid - 1] < keywords:
             low = mid + 1
         
-        if dataArray[mid] > keywords:
-            
-
-        #length = mid
-        
-        if int(mid) == 0:
+        if dataArray[mid - 1] > keywords:
+            high = mid
+            low = mid - (mid - 1)
+ 
+        if dataArray[mid - 1] == keywords:
             stop = True
+        if low + 1 > high:
+            stop = True
+            mid = -99999999
+    return mid-1
 
-    return mid
+dt = [10, 14, 19, 26, 27, 29, 31, 33, 35, 42, 44]
 
-dt = [10, 14, 19, 26, 27, 31, 33, 35, 42, 44]
-
-print(bs(dt, 31))
+print(bs(dt, 28))
         

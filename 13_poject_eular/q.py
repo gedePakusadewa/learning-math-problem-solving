@@ -32,13 +32,53 @@ def find_diagonal_value_right_left(data, row, col, nDiagonal):
             total = total * data[row + x][col - x]
     return total
 
-def find_value_diagonally(data, nDiagonal):
-    v = -1
-    for row in range(len(data)):
-        for col in range(len(data[0])):
-           # v = (find_diagonal_value_right_left(data, row, col, nDiagonal))
-            v = find_diagonal_value_left_right(data, row, col, nDiagonal)
-            print('row -> ' + str(row) + ' col -> ' + str(col)+ ' == '+ str(v))
+#find bigget multiplication result diagonally from left to right
+# example left to right
+# 1 0 0 0 
+# 0 1 0 0
+# 0 0 1 0
+# 0 0 0 1
+def f_d_l_r(data, nDiagonal):
+    #v = -1
+    #for row in range(len(data)):
+     #   for col in range(len(data[0])):
+      #     # v = (find_diagonal_value_right_left(data, row, col, nDiagonal))
+       #     v = find_diagonal_value_left_right(data, row, col, nDiagonal)
+        #    print('row -> ' + str(row) + ' col -> ' + str(col)+ ' == '+ str(v))
+
+    temp = 0
+    total = 0
+    lgc = len(data[0])
+    lgr = len(data)
+
+    for row in range(lgr):
+        for col in range(lgc):
+            total = find_diagonal_value_left_right(data, row, col, nDiagonal)
+            #print(total)
+            if total > temp:
+                temp = total
+                total = 0
+    return temp
+
+#find the biggest multiplication result diagonnaly from right to left
+# example
+# 0 0 0 1
+# 0 0 1 0
+# 0 1 0 0
+# 1 0 0 0
+def f_d_r_l(data, nDiagonal):
+    temp = 0
+    total = 0
+    lgc = len(data[0])
+    lgr = len(data)
+
+    for row in range(lgc):
+        for col in range(lgr):
+            total = find_diagonal_value_right_left(data, row, col, nDiagonal)
+            if total > temp:
+                temp = total
+                total = 0
+    return temp
 
 def find_value_horizontally(data, row, col, nDiagonal):
     total = -2222222
@@ -64,7 +104,7 @@ def find_value_vertically(data, row, col, nDiagonal):
     return total
 
 # find the bigget multiplication result value vertically
-def f_h(data, nNumber):
+def f_v(data, nNumber):
     tempBe = 0
     tempAf = 0
     total = 1
@@ -73,6 +113,21 @@ def f_h(data, nNumber):
     for row in range(lgr):
         for col in range(lgc):
             total = find_value_vertically(data, row, col, nNumber)
+            if total > tempBe:
+                tempBe = total
+                total = 0
+    return tempBe
+
+# find the biggest multiplication result value horizontally
+def f_h(data, nNumber):
+    tempBe = 0
+    total = 1
+    lgc = len(data[0])
+    lgr = len(data)
+
+    for row in range(lgr):
+        for col in range(lgc):
+            total = find_value_horizontally(data, row, col, nNumber)
             if total > tempBe:
                 tempBe = total
                 total = 0
@@ -90,8 +145,6 @@ dt2 = [
         [9, 7, 2, 1, 9],
         [3, 4, 6, 1, 9]
     ]
-
-print(f_h(dt2, 4))
 
 dt3 = [
 	[ 8,  2, 22, 97, 38, 15,  0, 40,  0, 75,  4,  5,  7, 78, 52, 12, 50, 77, 91,  8], 
@@ -116,8 +169,26 @@ dt3 = [
 	[ 1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52,  1, 89, 19, 67, 48]
 ]
 
+def main():
+    n = 4
+    d = dt3
+    #total_horizontal
+    t_h = f_h(d, n) 
+    #total_vertical
+    t_v = f_v(d, n)
+    #total_diagonal_left_right
+    t_d_l_r= f_d_l_r(d, n)
+    #total_diagonal_right_left
+    t_d_r_l= f_d_r_l(d, n)
+    
+    main = 0
+    
+    if t_h >= t_v:
+        main = t_h
+    else:
+        main = t_v
 
-#print(find_value_vertically(dt2, 3, 4, 1))
+    if main <= t_d_l_r:
+        main = t_d_l_r
 
-#find_value_diagonally(dt2, 3)
-#print('-> ' + str(find_diagonal_valright_left(dt, 2, 4, 2)))i
+

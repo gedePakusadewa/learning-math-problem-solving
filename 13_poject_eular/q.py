@@ -173,22 +173,29 @@ def main():
     n = 4
     d = dt3
     #total_horizontal
-    t_h = f_h(d, n) 
+    h = f_h(d, n) 
     #total_vertical
-    t_v = f_v(d, n)
+    v = f_v(d, n)
     #total_diagonal_left_right
-    t_d_l_r= f_d_l_r(d, n)
+    dlr = f_d_l_r(d, n)
     #total_diagonal_right_left
-    t_d_r_l= f_d_r_l(d, n)
+    drl = f_d_r_l(d, n)
     
     main = 0
     
-    if t_h >= t_v:
-        main = t_h
+    if h > v:
+        main = h
     else:
-        main = t_v
+        main = v
 
-    if main <= t_d_l_r:
-        main = t_d_l_r
+    if main < dlr:
+        main = dlr
+
+    if main < drl:
+        main = drl
+
+    return main
+
+print(main())
 
 

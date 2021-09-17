@@ -4,14 +4,21 @@
 #2 make a factorisation function to search 5000 divisors from triable number
 #3 
 
-//lanjut benerin delN(), alih adi list.remove sink nyak berfungsi???
+
+//lanjut ngalih mengoptimasi kodingan ne
 
 # function to calculated and return triangle number
 # from one natural number
-def gt(n):
+def gt():
+    n = 5000
     tmp = 0
+    fix = []
     for x in range(n):
         tmp = tmp + (x+1)
+        fix = delN(gf(tmp))
+       # print(len(fix))
+        if len(fix) > 500: 
+            break
     return tmp
 
 #function to get sum of divisors from one number
@@ -24,7 +31,7 @@ def gf(n):
         if n%x == 0:
             tmp.append(n/x)
             tmp.append(x)
-    print(tmp)
+    return tmp
 
 # destroy any duplicate number in array
 def delN(arr):
@@ -43,15 +50,21 @@ def delN(arr):
                 tmp[y] = -1
                 incre = incre + 1
                 break
-    #fix = tmp
-    #for x in range(0, incre, 1):
-    tmp.remove(-1)
+    fix = []
+    for x in tmp:
+        if x == -1:
+            continue
+        fix.append(x)
+    return fix
 
-    return tmp
+def main():
+    
 
+    print(gt())
 
+main()
 a = [4,5,6,7,2,4,8,5,4]
-print(delN(a))
+#print(delN(a))
 #gf(6)
 #print(gt(11))
 

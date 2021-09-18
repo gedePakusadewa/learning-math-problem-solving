@@ -1,8 +1,8 @@
-# A Simple Website To Solve Math Problem
+# A Simple Website / Code To Solve Math Problem
 
 I make a simple website that contain basic element of html like head, body, and script tag.
 
-Questions and answers in html and javascript code.
+Questions and answers sometimes in html javascript, python, php code.
 
 To see the answer, please run console log in browser.
 

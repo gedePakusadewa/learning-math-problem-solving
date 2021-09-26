@@ -4,33 +4,34 @@
 #2 make a factorisation function to search 5000 divisors from triable number
 #3 
 
-lanjut implementasi https://stackoverflow.com/questions/9835762/how-do-i-find-the-duplicates-in-a-list-and-create-another-list-with-them
+#lanjut implementasi https://stackoverflow.com/questions/9835762/how-do-i-find-the-duplicates-in-a-list-and-create-another-list-with-them
 
-implement some tips from this https://www.geeksforgeeks.org/optimization-tips-python-code/
+#implement some tips from this https://www.geeksforgeeks.org/optimization-tips-python-code/
 #//lanjut ngalih mengoptimasi kodingan ne
 
 # function to calculated and return triangle number
 # from one natural number
 def gt():
-    n, tmp, l, fix = 500, 0, 0, []
+    n, tmp, l, fix = 100000, 0, 0, []
     #fix = []
     for x in range(n):
         tmp = tmp + (x+1)
-        fix = delN(gf(tmp))
-       # print(len(fix))
+        # fix = delN(gf(tmp))
+        fix = gf(tmp)
+        # print(fix)
         l = len(fix)
         if len(fix) > 500: 
             break
     return l
 
-#function to get sum of divisors from one number
+#function to get number of divisors from one number
 def gf(n):
-    i, tmp = 0, [1, n]
+    i, tmp = 0, []
     for x in range(n, 0, -1):
-        if x == 1 or x == n:
-            continue
+        # if x == 1 or x == n:
+        #     continue
         if n%x == 0:
-            tmp.append(n/x)
+            # tmp.append(n/x)
             tmp.append(x)
     return tmp
 
@@ -56,14 +57,44 @@ def delN(arr):
         fix.append(x)
     return fix
 
+#get all prime factor from one number
+def g_p(n):
+    prime = 2
+    remain = n
+    isPrime = False
+    tmp = []
+    while remain != 0:
+        if remain%prime == 0:
+            tmp.append(prime)
+            if is_p(remain/prime) == True:
+                tmp.append(prime)
+                break
+            while isPrime == False:
+                prime = prime + 1
+                isPrime = is_p(prime)
+            isPrime = False 
+
+            remain = remain/prime
+
+            print(remain)
+    return tmp
+
+
+# check if number is prime or not
+def is_p(num):
+    for x in range(2, num, 1):
+        if num%x == 0:
+            return False
+    return True
+
 def main():
     
-
     print(gt())
 
-main()
+# main()
+print(g_p(80))
 #a = [4,5,6,7,2,4,8,5,4]
-#print(delN(a))
+# print(gf(12))
 #gf(6)
 #print(gt(11))
 

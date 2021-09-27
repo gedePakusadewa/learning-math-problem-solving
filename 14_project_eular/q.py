@@ -63,22 +63,29 @@ def g_p(n):
     remain = n
     isPrime = False
     tmp = []
+    div = 0
+
+    if is_p(n):
+        return n
+
     while remain != 0:
+
         if remain%prime == 0:
             tmp.append(prime)
-            if is_p(remain/prime) == True:
-                tmp.append(prime)
+            div = int(remain/prime)
+            if is_p(div) == True:
+                tmp.append(div)
                 break
-            while isPrime == False:
-                prime = prime + 1
-                isPrime = is_p(prime)
-            isPrime = False 
 
-            remain = remain/prime
+            if div%prime != 0:
+                while isPrime == False:
+                    prime = prime + 1
+                    isPrime = is_p(prime)
+                isPrime = False 
 
-            print(remain)
+            remain = div
+
     return tmp
-
 
 # check if number is prime or not
 def is_p(num):
@@ -92,7 +99,7 @@ def main():
     print(gt())
 
 # main()
-print(g_p(80))
+print(g_p(684))
 #a = [4,5,6,7,2,4,8,5,4]
 # print(gf(12))
 #gf(6)

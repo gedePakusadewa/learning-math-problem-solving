@@ -99,7 +99,7 @@ def main():
     print(gt())
 
 # main()
-print(g_p(684))
+print(g_p(200))
 #a = [4,5,6,7,2,4,8,5,4]
 # print(gf(12))
 #gf(6)

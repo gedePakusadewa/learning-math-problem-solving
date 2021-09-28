@@ -68,32 +68,27 @@ def g_p(n):
     if is_p(n):
         return n
 
-    # while remain != 0:
+    while (remain < 0):
 
-    #     if remain%prime == 0:
-    #         tmp.append(prime)
-    #         div = int(remain/prime)
-    #         if is_p(div) == True:
-    #             tmp.append(div)
-    #             break
+        if remain%prime == 0:
+            tmp.append(prime)
+            div = int(remain/prime)
+            if is_p(div) == True:
+                tmp.append(div)
+                break
 
-    #         if div%prime != 0:
-    #             while prime != 3:
+            if div%prime != 0:
+                while (prime < 4):
 
-    #                 prime = prime + 1
-    #                 # isPrime = is_p(prime)
-    #                 # if is_p(prime) == True:
-    #                 #     break
-    #                 # print(prime)
-    #             print('ts')
-    #             # isPrime = False 
+                    prime = prime + 1
+                    # isPrime = is_p(prime)
+                    # if is_p(prime) == True:
+                    #     break
+                    print(prime)
+                # isPrime = False 
 
-    #         remain = div
-    #         print(remain)
-    t = 0
-    while t < 10:
-        t = t +1
-        print(t) 
+            remain = div
+            # print(remain)
 
     return tmp
 

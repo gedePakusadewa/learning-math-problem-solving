@@ -68,22 +68,32 @@ def g_p(n):
     if is_p(n):
         return n
 
-    while remain != 0:
+    # while remain != 0:
 
-        if remain%prime == 0:
-            tmp.append(prime)
-            div = int(remain/prime)
-            if is_p(div) == True:
-                tmp.append(div)
-                break
+    #     if remain%prime == 0:
+    #         tmp.append(prime)
+    #         div = int(remain/prime)
+    #         if is_p(div) == True:
+    #             tmp.append(div)
+    #             break
 
-            if div%prime != 0:
-                while isPrime == False:
-                    prime = prime + 1
-                    isPrime = is_p(prime)
-                isPrime = False 
+    #         if div%prime != 0:
+    #             while prime != 3:
 
-            remain = div
+    #                 prime = prime + 1
+    #                 # isPrime = is_p(prime)
+    #                 # if is_p(prime) == True:
+    #                 #     break
+    #                 # print(prime)
+    #             print('ts')
+    #             # isPrime = False 
+
+    #         remain = div
+    #         print(remain)
+    t = 0
+    while t < 10:
+        t = t +1
+        print(t) 
 
     return tmp
 
@@ -94,12 +104,15 @@ def is_p(num):
             return False
     return True
 
+# def g_power(arr):
+#     pass
+
 def main():
     
     print(gt())
 
 # main()
-print(g_p(200))
+print(g_p(50))
 #a = [4,5,6,7,2,4,8,5,4]
 # print(gf(12))
 #gf(6)

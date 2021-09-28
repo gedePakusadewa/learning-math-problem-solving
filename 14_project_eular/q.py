@@ -11,6 +11,8 @@
 
 # function to calculated and return triangle number
 # from one natural number
+import time
+
 def gt():
     n, tmp, l, fix = 100000, 0, 0, []
     #fix = []
@@ -65,31 +67,28 @@ def g_p(n):
     tmp = []
     div = 0
 
-    if is_p(n):
+    if is_p(n) == True:
         return n
 
-    while (remain < 0):
+    while (remain > 0):
 
         if remain%prime == 0:
             tmp.append(prime)
             div = int(remain/prime)
             if is_p(div) == True:
                 tmp.append(div)
-                break
+                remain = 0
+                print(div)
+                time.sleep(0.2)
 
             if div%prime != 0:
-                while (prime < 4):
-
+                while (isPrime == False):
                     prime = prime + 1
-                    # isPrime = is_p(prime)
-                    # if is_p(prime) == True:
-                    #     break
-                    print(prime)
-                # isPrime = False 
-
-            remain = div
-            # print(remain)
-
+                    isPrime = is_p(prime)
+        isPrime = False
+ 
+        remain = div
+        # print(prime)
     return tmp
 
 # check if number is prime or not
@@ -99,15 +98,12 @@ def is_p(num):
             return False
     return True
 
-# def g_power(arr):
-#     pass
-
 def main():
     
     print(gt())
 
 # main()
-print(g_p(50))
+print(g_p(12))
 #a = [4,5,6,7,2,4,8,5,4]
 # print(gf(12))
 #gf(6)

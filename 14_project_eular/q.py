@@ -102,10 +102,10 @@ def g_power(arr):
         if arr[x] in tmp:
             continue
         else:
-            tmp[x] = 0
-            for y in range(x+1, l, 1):
+            tmp.update({arr[x]:0})
+            for y in range(x, l, 1):
                 if arr[x] == arr[y]:
-                    tmp[x] = tmp[x] + 1 
+                    tmp.update({arr[x]:tmp.get(arr[x])+1}) 
 
     print(tmp)
 

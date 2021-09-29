@@ -94,12 +94,29 @@ def is_p(num):
             return False
     return True
 
+def g_power(arr):
+    l = len(arr)
+    tmp = {}
+    for x in range(0, l, 1):
+        print(arr[x])
+        if arr[x] in tmp:
+            continue
+        else:
+            tmp[x] = 0
+            for y in range(x+1, l, 1):
+                if arr[x] == arr[y]:
+                    tmp[x] = tmp[x] + 1 
+
+    print(tmp)
+
 def main():
     
     print(gt())
 
+g_power([2, 2, 2, 3, 3, 5])
+
 # main()
-print(g_p(67583610))
+# print(g_p(67583610))
 #a = [4,5,6,7,2,4,8,5,4]
 # print(gf(12))
 #gf(6)

@@ -13,18 +13,29 @@
 # from one natural number
 import time
 
+# def gt():
+#     n, tmp, l, fix = 100000, 0, 0, []
+#     #fix = []
+#     for x in range(n):
+#         tmp = tmp + (x+1)
+#         # fix = delN(gf(tmp))
+#         fix = gf(tmp)
+#         # print(fix)
+#         l = len(fix)
+#         if len(fix) > 500: 
+#             break
+#     return l
+
 def gt():
-    n, tmp, l, fix = 100000, 0, 0, []
+    n, tmp, l, fix = 40, 0, 0, []
     #fix = []
     for x in range(n):
-        tmp = tmp + (x+1)
-        # fix = delN(gf(tmp))
-        fix = gf(tmp)
-        # print(fix)
-        l = len(fix)
-        if len(fix) > 500: 
+        tmp = tmp + (x +1)
+        fix = g_power(g_p(tmp))
+        # print(tmp)
+        if fix > 500: 
             break
-    return l
+    return tmp
 
 #function to get number of divisors from one number
 def gf(n):
@@ -61,6 +72,10 @@ def delN(arr):
 
 #get all prime factor from one number
 def g_p(n):
+
+    if n == 1:
+        return 1
+
     prime = 2
     remain = n
     isPrime = False
@@ -69,7 +84,7 @@ def g_p(n):
     stop = 1
 
     if is_p(n) == True:
-        return n
+        return 2
 
     while (stop > 0):
 
@@ -95,6 +110,13 @@ def is_p(num):
     return True
 
 def g_power(arr):
+    # print(arr)
+    if arr == 1:
+        return 1 
+
+    if isinstance(arr, list) == False:
+        return 2
+
     l = len(arr)
     tmp = {}
     for x in range(0, l, 1):
@@ -107,19 +129,24 @@ def g_power(arr):
                 if arr[x] == arr[y]:
                     tmp.update({arr[x]:tmp.get(arr[x])+1}) 
 
-    tmp2 = 0
+    tmp2 = 1
     for x in tmp.values():
-        tmp2 = tmp2 + x 
-    print(tmp2)
+        tmp2 = tmp2 * (x+1) 
+    
+    return tmp2
+    # print(tmp2)
 
 def main():
     
     print(gt())
 
-g_power([2, 5, 5])
+# g_power([3, 13])
 
 # main()
-# print(g_p(67583610))
+for x in range(1, 11, 1):
+    # print(x)
+    print((g_p(x)))
+# print(g_power(g_p(1)))
 #a = [4,5,6,7,2,4,8,5,4]
 # print(gf(12))
 #gf(6)

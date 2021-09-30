@@ -98,7 +98,7 @@ def g_power(arr):
     l = len(arr)
     tmp = {}
     for x in range(0, l, 1):
-        print(arr[x])
+        # print(arr[x])
         if arr[x] in tmp:
             continue
         else:
@@ -107,13 +107,16 @@ def g_power(arr):
                 if arr[x] == arr[y]:
                     tmp.update({arr[x]:tmp.get(arr[x])+1}) 
 
-    print(tmp)
+    tmp2 = 0
+    for x in tmp.values():
+        tmp2 = tmp2 + x 
+    print(tmp2)
 
 def main():
     
     print(gt())
 
-g_power([2, 2, 2, 3, 3, 5])
+g_power([2, 5, 5])
 
 # main()
 # print(g_p(67583610))

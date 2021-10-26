@@ -1,5 +1,4 @@
 class Is:
-    raw_data= []
 
     def __init__(self, raw_data):
         self.raw_data= raw_data
@@ -10,12 +9,12 @@ class Is:
         i_r= 0 # increment to right
         l= len(dt)
         tmp= 0
-
-        while i_r < l:
+        print(dt)
+        while i_r < l-1:
             #stop= True
             #print(dt)
-           # if i_r == l:
-               # break
+            if i_r == l:
+                break
             if dt[i_r] > dt[i_r+1]:
                 tmp= dt[i_r+1] 
                 dt[i_r+1]= dt[i_r]

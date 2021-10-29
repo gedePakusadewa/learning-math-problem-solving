@@ -12,7 +12,7 @@ class Is:
         print(dt)
         while i_r < l-1:
             #stop= True
-            #print(dt)
+            print(dt)
             if i_r == l:
                 break
             if dt[i_r] > dt[i_r+1]:

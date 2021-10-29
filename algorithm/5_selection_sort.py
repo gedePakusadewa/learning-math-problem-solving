@@ -4,16 +4,16 @@ class Sh:
 
     def s_sort(self)->list:
         arr= self.arr
+        print(arr)
         l= len(arr)
         tmp= arr[0]
         for i, dt in enumerate(arr):
-            print(arr)
-            smallest_index= self.smallest(arr[i:l-1])
+            smallest_index= self.smallest(arr[i:l])
             if arr[i] > arr[smallest_index + i]:
                 tmp= arr[i]
                 arr[i]= arr[smallest_index + i]
                 arr[smallest_index + i]= tmp
-
+            #print(arr)
         return arr
 
     def smallest(self, arr:list)->int:
